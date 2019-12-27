@@ -2,6 +2,7 @@ from time import sleep
 from yandex_music.client import Client
 import os
 import sys
+import config
 
 os.system("killall mocp")
 os.system("mocp -S")
@@ -11,7 +12,7 @@ if __name__ == "__main__":
 		print ("The next track number {}!".format(param))
 		n_song = param
 client = Client()
-client = Client.from_credentials('username@ya.ru', 'password')
+client = Client.from_credentials(config.username, config.password)
 if (n_song == None or n_song == 0):
 	n_song = 1
 print ("START downloading...")
